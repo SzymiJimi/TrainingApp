@@ -1,0 +1,173 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rekas.tainingapplication.MainActivity$PlaceholderFragment">
+
+    <TextView
+        android:id="@+id/exercisesResult"
+        android:layout_width="70dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="15dp"
+        android:text="20/60"
+        app:layout_constraintStart_toEndOf="@+id/exercisesNumber"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/textInfo0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="Witaj w aplikacji"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="357dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInfo2" />
+
+    <TextView
+        android:id="@+id/textInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:text="Wykonanych treningów w tym tygodniu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInfo3" />
+
+    <TextView
+        android:id="@+id/textInfo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Trening"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
+
+    <Button
+        android:id="@+id/startTreningButton"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="65dp"
+        android:text="Rozpocznij trening"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
+
+    <TextView
+        android:id="@+id/textInfo3"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="34dp"
+        android:text="Statystyki"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTreningButton" />
+
+    <TextView
+        android:id="@+id/exercisesToEnd"
+        android:layout_width="220dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Liczba treningów do końca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercisesNumber" />
+
+    <TextView
+        android:id="@+id/exercisesNumber"
+        android:layout_width="220dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="Ilość wykonanych ćwiczeń"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/assumption"
+        android:layout_width="220dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Założenie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercisesToEnd" />
+
+    <TextView
+        android:id="@+id/trainingTime"
+        android:layout_width="220dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Całkowity czas treningów"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assumption" />
+
+    <TextView
+        android:id="@+id/caloriesBurned"
+        android:layout_width="220dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Ilość spalonych kalorii"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trainingTime" />
+
+    <TextView
+        android:id="@+id/assumptionResult"
+        android:layout_width="95dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Nie spełnione"
+        app:layout_constraintStart_toEndOf="@+id/assumption"
+        app:layout_constraintTop_toBottomOf="@+id/toEndNumber" />
+
+    <TextView
+        android:id="@+id/toEndNumber"
+        android:layout_width="70dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:text="20"
+        app:layout_constraintStart_toEndOf="@+id/exercisesToEnd"
+        app:layout_constraintTop_toBottomOf="@+id/exercisesResult" />
+
+    <TextView
+        android:id="@+id/caloriesResult"
+        android:layout_width="95dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:text="1400kcal"
+        app:layout_constraintStart_toEndOf="@+id/caloriesBurned"
+        app:layout_constraintTop_toBottomOf="@+id/timeResult" />
+
+    <TextView
+        android:id="@+id/timeResult"
+        android:layout_width="95dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:text="6h23min"
+        app:layout_constraintStart_toEndOf="@+id/trainingTime"
+        app:layout_constraintTop_toBottomOf="@+id/assumptionResult" />
+
+</android.support.constraint.ConstraintLayout>
