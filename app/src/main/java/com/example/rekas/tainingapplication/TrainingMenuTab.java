@@ -27,8 +27,12 @@ public class TrainingMenuTab  extends Fragment  {
     Button pauseBtn;
     Button stopBtn;
     TextView txtTimer;
+    TextView countdownTimer;
+    TextView countdownText;
     Handler customHandler =new Handler();
     LinearLayout container;
+    int secs, mins, milliseconds, countdownSec=120, countdownMin=2, tmpSec=-1, displaySec=0;
+    boolean workout=true;
 
     long startTime=0L, timeInMiliseconds = 0L, timeSwapBuff=0L, updateTime=0L;
 
@@ -38,13 +42,37 @@ public class TrainingMenuTab  extends Fragment  {
         public void run() {
             timeInMiliseconds = SystemClock.uptimeMillis()-startTime;
             updateTime = timeSwapBuff + timeInMiliseconds;
-            int secs = (int) (updateTime/1000);
-            int mins = secs/60;
+            secs = (int) (updateTime/1000);
+
+            if(countdownSec==0)
+            {
+                countdownSec=121;
+                if(workout)
+                {
+                    countdownText.setText("Do końca przerwy");
+                    workout=false;
+                }else{
+                    countdownText.setText("Do końca serii");
+                    workout=true;
+                }
+            }
+
+            if(tmpSec!=secs){
+                countdownSec=countdownSec-1;
+                countdownMin=countdownSec/60;
+                displaySec=countdownSec;
+                displaySec%=60;
+                tmpSec=secs;
+            }
+
+            mins = secs/60;
             secs %=60;
-            int milliseconds= (int) (updateTime%1000);
-            
+
+            milliseconds= (int) (updateTime%1000);
+
             txtTimer.setText(""+mins+":"+String.format("%2d", secs)+":"
                                         +String.format("%3d", milliseconds));
+            countdownTimer.setText(countdownMin+":"+String.format("%2d", displaySec));
             customHandler.postDelayed(this,0);
         }
     };
@@ -61,9 +89,13 @@ public class TrainingMenuTab  extends Fragment  {
         stopBtn = rootView.findViewById(R.id.stopBtn);
         txtTimer = rootView.findViewById(R.id.timerValue);
         container = rootView.findViewById(R.id.times);
+        countdownTimer = rootView.findViewById(R.id.countdownTime);
+        countdownText = rootView.findViewById(R.id.countdownText);
 
         startBtn.setOnClickListener((view) -> {
                 startTime = SystemClock.uptimeMillis();
+                countdownSec=120;
+                displaySec=0;
                 customHandler.postDelayed(updateTimeThread, 0);
             }
         );
