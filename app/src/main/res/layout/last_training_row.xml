@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/trainingImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_fitness_center_black_24dp" />
+
+    <TextView
+        android:id="@+id/trainingName"
+        android:layout_width="132dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="10dp"
+        android:text="Nazwa treningu"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/trainingImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTrainingDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="15dp"
+        android:text="Czas trwania:"
+        app:layout_constraintStart_toEndOf="@+id/trainingImage"
+        app:layout_constraintTop_toBottomOf="@+id/trainingName" />
+
+    <TextView
+        android:id="@+id/trainingDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="2h 15m"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textTrainingDuration"
+        app:layout_constraintTop_toBottomOf="@+id/trainingName" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="16dp"
+        android:text="Data"
+        app:layout_constraintStart_toEndOf="@+id/trainingName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/trainingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="16dp"
+        android:text="20.04.2018"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/trainingDuration"
+        app:layout_constraintTop_toBottomOf="@+id/textDate" />
+</android.support.constraint.ConstraintLayout>
