@@ -62,10 +62,10 @@
 
     <Button
         android:id="@+id/startTreningButton"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="43dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
         android:text="Rozpocznij trening"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
@@ -74,11 +74,11 @@
         android:id="@+id/textInfo3"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="8dp"
         android:text="Statystyki"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startTreningButton" />
+        app:layout_constraintTop_toBottomOf="@+id/addTrainingButton" />
 
     <TextView
         android:id="@+id/exercisesToEnd"
@@ -169,5 +169,25 @@
         android:text="6h23min"
         app:layout_constraintStart_toEndOf="@+id/trainingTime"
         app:layout_constraintTop_toBottomOf="@+id/assumptionResult" />
+
+    <Button
+        android:id="@+id/chooseTrainingButton"
+        android:layout_width="172dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="56dp"
+        android:text="Wybierz trening"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
+
+    <Button
+        android:id="@+id/addTrainingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="16dp"
+        android:text="Dodaj trening"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTreningButton" />
 
 </android.support.constraint.ConstraintLayout>

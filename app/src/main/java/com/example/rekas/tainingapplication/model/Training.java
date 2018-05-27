@@ -7,26 +7,29 @@ import com.j256.ormlite.table.DatabaseTable;
  * Created by rekas on 14.04.2018.
  */
 
-@DatabaseTable(tableName = "Training")
 public class Training {
 
-
-
-    @DatabaseField(id=true)
-    private long id;
+    private Integer id;
     private String name;
-    private String date;
-    private String time;
-    private String exerciseId;
 
-    public Training() {
+    public Training(){
+
     }
 
-    public long getId() {
+    public Training(String name) {
+        this.name = name;
+    }
+
+    public Training(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,27 +41,4 @@ public class Training {
         this.name = name;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getExerciseId() {
-        return exerciseId;
-    }
-
-    public void setExerciseId(String exerciseId) {
-        this.exerciseId = exerciseId;
-    }
 }

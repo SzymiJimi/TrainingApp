@@ -1,38 +1,43 @@
 package com.example.rekas.tainingapplication.model;
 
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+
+import java.util.ArrayList;
 
 /**
  * Created by rekas on 14.04.2018.
  */
 
-@DatabaseTable(tableName = "exercise")
 public class Exercise {
 
-    public Exercise() {
+    public static ArrayList<Exercise> EXERCISES_LIST;
+
+    private Integer idExercise;
+    private String name;
+    private String duration;
+    private String repetitions;
+    private String series;
+    private Integer trainingId;
+
+    public Exercise(){
+
     }
 
-    @DatabaseField(id=true)
-    private Integer idExercise;
+    public Exercise(String name, String duration, String repetitions,String series ,Integer trainingId) {
+        this.name = name;
+        this.duration = duration;
+        this.repetitions = repetitions;
+        this.series = series;
+        this.trainingId = trainingId;
+    }
 
-    @DatabaseField
-    private String name;
-
-    @DatabaseField
-    private String duration;
-
-    @DatabaseField
-    private String repetitions;
-
-    @DatabaseField
-    private Integer load;
-
-    @DatabaseField
-    private String additionalInfo;
-
-    @DatabaseField
-    private Integer trainingId;
+    public Exercise(Integer id, String name, String duration, String repetitions,String series ,Integer trainingId) {
+        this.idExercise = id;
+        this.name = name;
+        this.duration = duration;
+        this.repetitions = repetitions;
+        this.series = series;
+        this.trainingId = trainingId;
+    }
 
     public Integer getIdExercise() {
         return idExercise;
@@ -66,20 +71,12 @@ public class Exercise {
         this.repetitions = repetitions;
     }
 
-    public Integer getLoad() {
-        return load;
+    public String getSeries() {
+        return series;
     }
 
-    public void setLoad(Integer load) {
-        this.load = load;
-    }
-
-    public String getAdditionalInfo() {
-        return additionalInfo;
-    }
-
-    public void setAdditionalInfo(String additionalInfo) {
-        this.additionalInfo = additionalInfo;
+    public void setSeries(String series) {
+        this.series = series;
     }
 
     public Integer getTrainingId() {

@@ -7,12 +7,20 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatCallback;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.rekas.tainingapplication.adapters.ExerciseListAdapter;
+import com.example.rekas.tainingapplication.model.Exercise;
 
 /**
  * Created by rekas on 14.04.2018.
@@ -22,6 +30,10 @@ public class TrainingMenuTab  extends Fragment  {
 
 
 //    private void loadList(List<>)
+
+    ListAdapter exerciseAdapter;
+    ListView exercisesList;
+    View rootView;
 
     Button startBtn;
     Button pauseBtn;
@@ -82,7 +94,11 @@ public class TrainingMenuTab  extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.training_menu, container, false);
+        rootView = inflater.inflate(R.layout.training_menu, container, false);
+
+       String TAG = "TrainingMenuTAB";
+
+        initializeExerciseList();
 
         startBtn= rootView.findViewById(R.id.startBtn);
         pauseBtn= rootView.findViewById(R.id.btnPause);
@@ -111,6 +127,20 @@ public class TrainingMenuTab  extends Fragment  {
     });
 
         return rootView;
+    }
+
+    private void initializeExerciseList(){
+        exerciseAdapter = new ExerciseListAdapter(getContext(), Exercise.EXERCISES_LIST);
+        exercisesList = (ListView) rootView.findViewById(R.id.nextExercisesList);
+        exercisesList.setAdapter(exerciseAdapter);
+
+        exercisesList.setOnItemClickListener(
+                (AdapterView<?> parent, View view, int position, long id) -> {
+                    String training = String.valueOf(parent.getItemAtPosition(position));
+                    Toast.makeText(getContext(), training, Toast.LENGTH_LONG).show();
+                }
+        );
+
     }
 
 }

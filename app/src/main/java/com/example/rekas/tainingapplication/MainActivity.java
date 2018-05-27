@@ -19,6 +19,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.example.rekas.tainingapplication.model.Exercise;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+
+    private ArrayList<Exercise> exercisesToStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
