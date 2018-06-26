@@ -29,7 +29,7 @@
 
     <EditText
         android:id="@+id/trainingName"
-        android:layout_width="344dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
@@ -50,7 +50,7 @@
 
     <EditText
         android:id="@+id/repeatWuantity"
-        android:layout_width="161dp"
+        android:layout_width="130dp"
         android:layout_height="45dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="1dp"
@@ -71,7 +71,7 @@
 
     <EditText
         android:id="@+id/seriesQuantity"
-        android:layout_width="161dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
@@ -91,7 +91,7 @@
 
     <EditText
         android:id="@+id/breakLength"
-        android:layout_width="161dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:ems="10"
@@ -101,7 +101,7 @@
 
     <Button
         android:id="@+id/addTrainingBtn"
-        android:layout_width="161dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="34dp"

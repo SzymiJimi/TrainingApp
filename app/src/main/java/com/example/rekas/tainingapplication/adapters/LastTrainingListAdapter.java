@@ -11,15 +11,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.rekas.tainingapplication.R;
+import com.example.rekas.tainingapplication.model.ExecutedTraining;
+
+import java.util.ArrayList;
 
 /**
  * Created by rekas on 23.04.2018.
  */
 
-public class LastTrainingListAdapter extends ArrayAdapter<String> {
+public class LastTrainingListAdapter extends ArrayAdapter<ExecutedTraining> {
 
-    public LastTrainingListAdapter(@NonNull Context context, String[] trainings) {
-        super(context, R.layout.last_training_row , trainings);
+    public LastTrainingListAdapter(@NonNull Context context) {
+        super(context, R.layout.last_training_row , ExecutedTraining.EXECUTED_TRAININGS);
     }
 
     @NonNull
@@ -29,7 +32,7 @@ public class LastTrainingListAdapter extends ArrayAdapter<String> {
         LayoutInflater trainingInflater = LayoutInflater.from(getContext());
         View lastTrainingView = trainingInflater.inflate(R.layout.last_training_row, parent, false);
 
-        String singleTrainingItem = getItem(position);
+        ExecutedTraining singleTrainingItem = getItem(position);
         TextView trainingName = (TextView) lastTrainingView.findViewById(R.id.trainingName);
         ImageView trainingImage = lastTrainingView.findViewById(R.id.trainingImage);
         TextView textTrainingDuration = lastTrainingView.findViewById(R.id.textTrainingDuration);
@@ -37,7 +40,15 @@ public class LastTrainingListAdapter extends ArrayAdapter<String> {
         TextView trainingDuration = (TextView) lastTrainingView.findViewById(R.id.trainingDuration);
         TextView trainingDate = (TextView) lastTrainingView.findViewById(R.id.trainingDate);
 
-        trainingName.setText(singleTrainingItem);
+        Long timeInMiliseconds = Long.parseLong(singleTrainingItem.getDuration());
+        Integer  secs = (int)(long) timeInMiliseconds/1000;
+        Integer mins = secs/60;
+        secs %=60;
+
+        trainingName.setText(singleTrainingItem.getName());
+        String duration = mins+":"+secs;
+        trainingDuration.setText(duration);
+        trainingDate.setText(singleTrainingItem.getDateOfExecution());
 //        trainingImage.setImageResource(R.drawable.ic_fitness_center_black_24dp);
         return lastTrainingView;
 

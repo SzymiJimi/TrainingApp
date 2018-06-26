@@ -9,6 +9,8 @@ import com.j256.ormlite.table.DatabaseTable;
 
 public class Training {
 
+    public static Training ACTUAL_TRAINING;
+
     private Integer id;
     private String name;
 

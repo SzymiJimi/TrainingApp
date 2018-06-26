@@ -7,14 +7,15 @@
     tools:context="com.example.rekas.tainingapplication.MainActivity$PlaceholderFragment">
 
     <TextView
-        android:id="@+id/exercisesResult"
-        android:layout_width="70dp"
+        android:id="@+id/main_lastTrainingDate"
+        android:layout_width="160dp"
         android:layout_height="23dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="15dp"
-        android:text="20/60"
-        app:layout_constraintStart_toEndOf="@+id/exercisesNumber"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="48dp"
+        android:text="none"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTrainingButton" />
 
     <TextView
         android:id="@+id/textInfo0"
@@ -30,42 +31,21 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="357dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInfo2" />
-
-    <TextView
-        android:id="@+id/textInfo2"
-        android:layout_width="wrap_content"
-        android:layout_height="18dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
-        android:text="Wykonanych treningów w tym tygodniu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInfo3" />
-
     <TextView
         android:id="@+id/textInfo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:text="Trening"
+        android:text="Wybrany trening"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
 
     <Button
         android:id="@+id/startTreningButton"
-        android:layout_width="172dp"
+        android:layout_width="153dp"
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="108dp"
         android:text="Rozpocznij trening"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
@@ -74,108 +54,90 @@
         android:id="@+id/textInfo3"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
         android:text="Statystyki"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addTrainingButton" />
 
     <TextView
         android:id="@+id/exercisesToEnd"
-        android:layout_width="220dp"
+        android:layout_width="175dp"
         android:layout_height="23dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Liczba treningów do końca"
+        android:layout_marginTop="32dp"
+        android:text="Całkowity czas treningów"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exercisesNumber" />
 
     <TextView
         android:id="@+id/exercisesNumber"
-        android:layout_width="220dp"
+        android:layout_width="175dp"
         android:layout_height="22dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:text="Ilość wykonanych ćwiczeń"
+        android:layout_marginTop="28dp"
+        android:text="Ostatni trening"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/textInfo3" />
 
     <TextView
         android:id="@+id/assumption"
-        android:layout_width="220dp"
+        android:layout_width="175dp"
         android:layout_height="23dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Założenie"
+        android:layout_marginTop="32dp"
+        android:text="Ilosć wykonanych treningów"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exercisesToEnd" />
 
     <TextView
         android:id="@+id/trainingTime"
-        android:layout_width="220dp"
+        android:layout_width="175dp"
         android:layout_height="23dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Całkowity czas treningów"
+        android:layout_marginTop="32dp"
+        android:text="Nazwa ostatniego treningu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/assumption" />
 
     <TextView
-        android:id="@+id/caloriesBurned"
-        android:layout_width="220dp"
+        android:id="@+id/main_trainingQuantity"
+        android:layout_width="160dp"
         android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Ilość spalonych kalorii"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainingTime" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:text="none"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_trainingTime" />
 
     <TextView
-        android:id="@+id/assumptionResult"
-        android:layout_width="95dp"
+        android:id="@+id/main_trainingTime"
+        android:layout_width="160dp"
         android:layout_height="23dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="16dp"
-        android:text="Nie spełnione"
-        app:layout_constraintStart_toEndOf="@+id/assumption"
-        app:layout_constraintTop_toBottomOf="@+id/toEndNumber" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:text="none"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_lastTrainingDate" />
 
     <TextView
-        android:id="@+id/toEndNumber"
-        android:layout_width="70dp"
+        android:id="@+id/main_lastTrainingName"
+        android:layout_width="160dp"
         android:layout_height="23dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="16dp"
-        android:text="20"
-        app:layout_constraintStart_toEndOf="@+id/exercisesToEnd"
-        app:layout_constraintTop_toBottomOf="@+id/exercisesResult" />
-
-    <TextView
-        android:id="@+id/caloriesResult"
-        android:layout_width="95dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="16dp"
-        android:text="1400kcal"
-        app:layout_constraintStart_toEndOf="@+id/caloriesBurned"
-        app:layout_constraintTop_toBottomOf="@+id/timeResult" />
-
-    <TextView
-        android:id="@+id/timeResult"
-        android:layout_width="95dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="16dp"
-        android:text="6h23min"
-        app:layout_constraintStart_toEndOf="@+id/trainingTime"
-        app:layout_constraintTop_toBottomOf="@+id/assumptionResult" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:text="none"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_trainingQuantity" />
 
     <Button
         android:id="@+id/chooseTrainingButton"
-        android:layout_width="172dp"
-        android:layout_height="43dp"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="108dp"
         android:text="Wybierz trening"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
@@ -183,11 +145,43 @@
     <Button
         android:id="@+id/addTrainingButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="8dp"
         android:text="Dodaj trening"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startTreningButton" />
+
+    <TextView
+        android:id="@+id/mainMenuTrainingName"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:text="Nazwa treningu"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInfo1" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Przewidywany czas trwania:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainMenuTrainingName" />
+
+    <TextView
+        android:id="@+id/mainMenuTrainingDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="62dp"
+        android:text="2h15"
+        app:layout_constraintStart_toEndOf="@+id/textView33"
+        app:layout_constraintTop_toBottomOf="@+id/textInfo0" />
 
 </android.support.constraint.ConstraintLayout>

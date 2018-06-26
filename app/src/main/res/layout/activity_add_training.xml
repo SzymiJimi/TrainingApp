@@ -20,6 +20,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_add_training" />
+    <include
+        layout="@layout/content_add_training"
+        android:layout_height="429dp" />
 
 </android.support.design.widget.CoordinatorLayout>
